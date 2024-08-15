@@ -1,0 +1,30 @@
+server:
+  port: 8089
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+#      authentication:
+#        username: asif
+#        password: password
+      database: customer
+#      authentication-database: admin
+      auto-index-creation: true
+springdoc:
+  api-docs:
+    path: /api-docs
+    title: My API
+    description: API documentation
+    version: OPENAPI_3_1
+  swagger-ui:
+    path: /swagger-ui.html
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+  endpoint:
+    info:
+      enabled: true
+
