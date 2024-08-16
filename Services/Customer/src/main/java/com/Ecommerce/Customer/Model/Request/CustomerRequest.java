@@ -1,6 +1,6 @@
 package com.Ecommerce.Customer.Model.Request;
 
-import com.Ecommerce.Customer.Model.Address;
+import com.Ecommerce.Customer.Model.Entity.Address;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 

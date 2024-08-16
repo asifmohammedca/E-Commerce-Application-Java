@@ -1,6 +1,6 @@
 package com.Ecommerce.Customer.Component;
 
-import com.Ecommerce.Customer.Model.Customer;
+import com.Ecommerce.Customer.Model.Entity.Customer;
 import com.Ecommerce.Customer.Model.Request.CustomerRequest;
 import com.Ecommerce.Customer.Model.Response.CustomerRsponse;
 import lombok.extern.slf4j.Slf4j;

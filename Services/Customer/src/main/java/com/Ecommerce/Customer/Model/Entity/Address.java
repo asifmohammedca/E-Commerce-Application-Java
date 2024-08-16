@@ -1,4 +1,4 @@
-package com.Ecommerce.Customer.Model;
+package com.Ecommerce.Customer.Model.Entity;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
