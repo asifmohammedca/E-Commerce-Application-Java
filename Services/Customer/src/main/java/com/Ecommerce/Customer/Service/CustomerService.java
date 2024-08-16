@@ -2,7 +2,7 @@ package com.Ecommerce.Customer.Service;
 
 import com.Ecommerce.Customer.Component.CustomerMapper;
 import com.Ecommerce.Customer.Exception.CustomerNotFoundException;
-import com.Ecommerce.Customer.Model.Customer;
+import com.Ecommerce.Customer.Model.Entity.Customer;
 import com.Ecommerce.Customer.Model.Request.CustomerRequest;
 import com.Ecommerce.Customer.Model.Response.CustomerRsponse;
 import com.Ecommerce.Customer.Repository.CustomerRepository;

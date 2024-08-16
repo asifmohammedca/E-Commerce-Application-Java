@@ -1,6 +1,6 @@
 package com.Ecommerce.Customer.Model.Response;
 
-import com.Ecommerce.Customer.Model.Address;
+import com.Ecommerce.Customer.Model.Entity.Address;
 
 public record CustomerRsponse(
         String id,
