@@ -21,7 +21,7 @@ spring:
 springdoc:
   api-docs:
     path: /api-docs
-    title: My API
+    title: Product Service API
     description: API documentation
     version: OPENAPI_3_1
   swagger-ui:
@@ -34,4 +34,3 @@ management:
   endpoint:
     info:
       enabled: true
-
