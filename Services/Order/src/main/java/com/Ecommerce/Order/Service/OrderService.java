@@ -1,12 +1,14 @@
 package com.Ecommerce.Order.Service;
 
 import com.Ecommerce.Order.Client.CustomerClient;
+import com.Ecommerce.Order.Client.PaymentClient;
 import com.Ecommerce.Order.Client.ProductClient;
 import com.Ecommerce.Order.Component.OrderMapper;
 import com.Ecommerce.Order.Exception.BusinessException;
 import com.Ecommerce.Order.Kafka.OrderProducer;
 import com.Ecommerce.Order.Model.Request.OrderLineRequest;
 import com.Ecommerce.Order.Model.Request.OrderRequest;
+import com.Ecommerce.Order.Model.Request.PaymentRequest;
 import com.Ecommerce.Order.Model.Request.PurchaseRequest;
 import com.Ecommerce.Order.Model.Response.OrderConfirmation;
 import com.Ecommerce.Order.Model.Response.OrderResponse;
@@ -30,6 +32,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderLineService orderLineService;
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
 
 
     @Transactional
@@ -54,9 +57,14 @@ public class OrderService {
                     )
             );
         }
-
-        // ToDo: Paymet
-
+        var paymentRequest = new PaymentRequest(
+                orderRequest.amount(),
+                orderRequest.paymentMethod(),
+                order.getId(),
+                order.getReference(),
+                customer
+        );
+        paymentClient.requestOrderPayment(paymentRequest);
         orderProducer.sendOrderConfirmation(
                 new OrderConfirmation(
                         orderRequest.reference(),

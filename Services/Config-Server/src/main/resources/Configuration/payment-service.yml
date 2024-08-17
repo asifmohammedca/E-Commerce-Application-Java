@@ -1,9 +1,9 @@
 server:
-  port: 8091
+  port: 8092
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/order
+    url: jdbc:postgresql://localhost:5432/payment
     username: "postgres"
     password: "password"
   jpa:
@@ -11,23 +11,21 @@ spring:
       ddl-auto: create
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
   kafka:
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: orderConfirmation:com.Ecommerce.Order.Model.Response.OrderConfirmation
-
+        spring.json.type.mapping: paymentConfirmation:com.Ecommerce.Payment.Model.Request.PaymentNotificationRequest
 application:
   config:
-    customer-url: http://localhost:8089/api/customer
     product-url: http://localhost:8090/api/product
-    payment-url: http://localhost:8091/api/payment
 springdoc:
   api-docs:
     path: /api-docs
-    title: Order Service API
+    title: Payment Service API
     description: API documentation
     version: OPENAPI_3_1
   swagger-ui:
@@ -40,4 +38,3 @@ management:
   endpoint:
     info:
       enabled: true
-
