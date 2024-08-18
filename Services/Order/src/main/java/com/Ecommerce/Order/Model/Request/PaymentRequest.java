@@ -1,7 +1,7 @@
 package com.Ecommerce.Order.Model.Request;
 
 import com.Ecommerce.Order.Model.Enum.PaymentMethod;
-import com.Ecommerce.Order.Model.Response.CustomerResponse;
+import com.Ecommerce.Order.Model.Response.Customer;
 
 import java.math.BigDecimal;
 
@@ -11,6 +11,6 @@ public record PaymentRequest(
         PaymentMethod paymentMethod,
         Integer orderId,
         String orderReference,
-        CustomerResponse customerResponse
+        Customer customer
 ) {
 }

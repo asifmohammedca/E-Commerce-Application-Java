@@ -21,9 +21,9 @@ spring:
 
 application:
   config:
-    customer-url: http://localhost:8089/api/customer
-    product-url: http://localhost:8090/api/product
-    payment-url: http://localhost:8092/api/payment
+    customer-url: http://localhost:8093/api/customer
+    product-url: http://localhost:8093/api/product
+    payment-url: http://localhost:8093/api/payment
 springdoc:
   api-docs:
     path: /api-docs
