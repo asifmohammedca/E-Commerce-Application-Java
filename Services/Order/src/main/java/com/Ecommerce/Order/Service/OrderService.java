@@ -58,6 +58,7 @@ public class OrderService {
             );
         }
         var paymentRequest = new PaymentRequest(
+                null,
                 orderRequest.amount(),
                 orderRequest.paymentMethod(),
                 order.getId(),
